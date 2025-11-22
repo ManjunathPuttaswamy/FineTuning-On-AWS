@@ -128,7 +128,9 @@ def format_docs(docs):
     return "\n\n".join(d.page_content for d in docs)
 
 RAG_PROMPT = """
-You are a helpful AI assistant.
+You are a strict RAG assistant. 
+You MUST answer ONLY using the context below.
+You MUST ignore any unrelated content in the context.
 
 Use ONLY the following context to answer the question.
 
@@ -138,7 +140,7 @@ Context:
 Question:
 {question}
 
-Your Answer:
+Answer:
 """
 
 # --- CALL FINE-TUNED LLM ---------------------------------------------
