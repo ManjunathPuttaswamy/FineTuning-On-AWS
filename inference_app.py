@@ -3,14 +3,14 @@ import os
 import json
 import requests
 import streamlit as st
+from dotenv import load_dotenv
+load_dotenv()
 
 # ---- CONFIG ---------------------------------------------------------
 
-# If you want, you can move this to .env like in the RAG app:
-API_URL = os.getenv(
-    "API_URL",
-    "https://g0kqmpwaw9.execute-api.ap-south-1.amazonaws.com/Production/predict",
-)
+API_URL = os.getenv("API_URL") 
+print(API_URL)# Replace with your actual API Gateway endpoint
+API_KEY = os.getenv("API_KEY")  # Replace with your actual API key if needed
 
 st.set_page_config(page_title="Inference App", layout="wide")
 st.title("Inference Application")
